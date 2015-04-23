@@ -157,5 +157,37 @@ int cancionLDC::getSize(){
 		}
 	}
 	
-	
+	cancionLDC *cancionLDC::getAnte(){
+		return this->anterior;
+	}
+
+	void cancionLDC::setAnte(cancionLDC *nAnte){
+		this->anterior = nAnte;
+	}
+
+	cancionLDC *cancionLDC::getSgt(){
+		return this->siguiente;
+	}
+
+	void cancionLDC::setSgt(cancionLDC *nSgt){
+		this->siguiente = nSgt;
+	}
+
+	cancionLDC* cancionLDC::contains(char* _nombre){
+		cancionLDC *r= new cancionLDC();
+
+		if (!vacia()){
+			nodoCancion *aux = getCab();
+			do{
+				if (strstr(nombre, aux->getNombre()) != NULL){
+					//encontro el nodo
+					//r->agregar(aux->getCancion());
+					cout << "TO DO";
+				}
+				aux = aux->getSgte();
+			} while (aux != getCab());
+
+		}
+		return r;
+	}
 

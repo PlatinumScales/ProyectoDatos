@@ -1,15 +1,16 @@
-﻿Build started 4/23/2015 10:52:45 AM.
+﻿Build started 4/23/2015 12:54:56 PM.
      1>Project "C:\Users\Alejandro\Documents\Proyecto Estructuras de Datos\ProyectoDatos\MusicPlayer\MusicPlayer\MusicPlayer.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt autorList.cpp listaDeListas.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt autorList.cpp cancionLDC.cpp listaDeListas.cpp
          listaDeListas.cpp
+         cancionLDC.cpp
          autorList.cpp
          Generating Code...
-     1>c:\users\alejandro\documents\proyecto estructuras de datos\proyectodatos\musicplayer\musicplayer\autorlist.cpp(122): warning C4715: 'autorList::buscar' : not all control paths return a value
      1>c:\users\alejandro\documents\proyecto estructuras de datos\proyectodatos\musicplayer\musicplayer\autorlist.cpp(91): warning C4715: 'autorList::eliminarAutor' : not all control paths return a value
+     1>c:\users\alejandro\documents\proyecto estructuras de datos\proyectodatos\musicplayer\musicplayer\autorlist.cpp(122): warning C4715: 'autorList::buscar' : not all control paths return a value
      1>c:\users\alejandro\documents\proyecto estructuras de datos\proyectodatos\musicplayer\musicplayer\autorlist.cpp(65): error C4700: uninitialized local variable 'aux' used
      1>Done Building Project "C:\Users\Alejandro\Documents\Proyecto Estructuras de Datos\ProyectoDatos\MusicPlayer\MusicPlayer\MusicPlayer.vcxproj" (Build target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:00.50
+Time Elapsed 00:00:01.60

@@ -31,5 +31,14 @@ public:
 	void mostrarLista();
 	void removeNodo(nodoCancion *aux);
 //	cancionLDC * clone();
+
+	cancionLDC *getAnte();
+	void setAnte(cancionLDC *nAnte);
+
+	cancionLDC *getSgt();
+	void setSgt(cancionLDC *nDesp);
+
+	cancionLDC* contains(char* _nombre);// regresa una lista de canciones cuyo nombre contiene _nombre
+
 };
 
