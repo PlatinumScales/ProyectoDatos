@@ -62,9 +62,9 @@ bool autorList::vacia(){
 bool autorList::eliminarAutor(char * _autor){
 
 	bool eliminado = false;
-	nodoAutor *aux = aux->getSgte();//como no tiene getAnte entonces lo situo en el segundo nodo por si lo tengo que eliminar luego
+	//nodoAutor *aux = aux->getSgte();//como no tiene getAnte entonces lo situo en el segundo nodo por si lo tengo que eliminar luego
 	//setearlo a la cabeza y eliminarlo
-
+	nodoAutor *aux = getCab();
 	if (!vacia())
 		while (aux != NULL && eliminado)
 			if (aux->getOAutor()->getNombre() == _autor){

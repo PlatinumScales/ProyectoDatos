@@ -14,7 +14,7 @@ public:
 	//objeto cancion? 
 	
 	//nombre por ahora
-	char* nombre[30];
+	char nombre[30];
 
 
 	char * getNombre();
