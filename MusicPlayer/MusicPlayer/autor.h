@@ -2,8 +2,7 @@
 
 class autorList;
 class listaDeListas;
-class autor
-{
+class autor{
 	
 private:
 	char* nombre; //Nombre del solista o banda
@@ -12,6 +11,9 @@ private:
 public:
 	autor();
 	~autor();
+
+	char *getNombre();
+	void setNombre(char * _nombre);
 
 };
 

@@ -111,7 +111,7 @@ int cancionLDC::getSize(){
 			nodoCancion  *aux = getCab();
 
 			do{
-				if (strcmp(aux->getNombre, nombre) == 0){
+				if (strcmp(aux->getNombre(), nombre) == 0){
 					//el valor de aux se debe eliminar entonces.
 
 					if (getSize() == 1){
