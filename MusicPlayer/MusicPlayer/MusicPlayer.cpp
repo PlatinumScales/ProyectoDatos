@@ -6,6 +6,44 @@
 #include "cancionLDC.h"
 
 
+
+void agregar(){
+
+	int x;
+	int opc = 0;
+	do {
+		system("cls");
+		cout << "                          ------------------" << endl;
+		cout << "                         |   Music Player   |" << endl;
+		cout << "                         |                  |" << endl;
+		cout << "                          ------------------" << endl;
+		cout << "_______________________________________________________________________________" << endl;
+		cout << endl;
+		cout << endl;
+		cout << "                            Agregar Canciones" << endl;
+		cout << endl;
+		cout << "( 1 ) Prototipo" << endl;
+	
+		cout << "( 0 ) Regresar" << endl;
+		cin >> opc;
+
+		switch (opc){
+		case 1:
+
+
+			break;
+		case 0:cout << "Fin del programa..." << endl;
+			break;
+		default: cout << "Opcion no valida..." << endl;
+
+		}// fin del switch
+		system("pause");
+
+	} while (opc != 0);
+
+
+}
+
 void reproducir(){
 
 	int x;
@@ -25,7 +63,7 @@ void reproducir(){
 		cout << "( 2 ) Buscar por Autor" << endl;
 		cout << "( 3 ) Buscar por Genero" << endl;
 		cout << "( 4 ) Buscar por Nombre" << endl;
-		cout << "( 0 ) Salir" << endl;
+		cout << "( 0 ) Regresar" << endl;
 		cin >> opc;
 
 		switch (opc){
@@ -73,6 +111,10 @@ void menu(){
 		case 1:
 			reproducir();
 	
+			break;
+		case 2:
+			agregar();
+
 			break;
 		case 0:cout << "Fin del programa..." << endl;
 			break;
