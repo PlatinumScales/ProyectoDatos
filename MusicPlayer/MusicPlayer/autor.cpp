@@ -15,4 +15,4 @@ char *autor::getNombre(){
 }
 void autor::setNombre(char * _nombre){
 	this->nombre, _nombre;
-}
+} 

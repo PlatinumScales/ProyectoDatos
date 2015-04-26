@@ -4,7 +4,7 @@
 nodoAutor::nodoAutor()
 {
 }
-
+ 
 
 nodoAutor::~nodoAutor()
 {

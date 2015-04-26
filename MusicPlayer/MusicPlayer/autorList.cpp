@@ -130,4 +130,4 @@ void autorList::desplegarLISTA(){
 		aux = aux->getSgte();
 
 	}
-}
+} 
