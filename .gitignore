@@ -4,6 +4,8 @@
 *.o
 *.obj
 *.opensdf
+*.log
+*.tlog
 
 # Precompiled Headers
 *.gch
