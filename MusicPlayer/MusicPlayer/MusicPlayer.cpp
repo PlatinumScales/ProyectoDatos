@@ -203,6 +203,7 @@ void reproducir(){
 
 }
 
+
 void eliminar(){
 
 	int x;
@@ -213,13 +214,24 @@ void eliminar(){
 		cout << endl;
 		cout << "( 1 ) Desplegar todas" << endl;
 		cout << "( 2 ) Eliminar por Autor" << endl;
-		cout << "( 4 ) Eliminar por Nombre" << endl;
+		cout << "( 3 ) Eliminar por Nombre" << endl;
 		cout << "( 0 ) Regresar" << endl;
 		cin >> opc;
 
 		switch (opc){
 		case 1:
-			
+			all->mostrarLista();
+			break;
+		case 2:
+			cout << "ingrese el nombre del autor a eliminar" << endl;
+			cin >> nombre;
+			lAutores->eliminarAutor(nombre);
+			break;
+
+		case 3:
+			cout << "ingrese el nombre de la cancion a eliminar" << endl;
+			cin >> nombre;
+			all->eliminar(nombre);
 			break;
 		case 0:cout << " " << endl;
 			break;
@@ -232,6 +244,9 @@ void eliminar(){
 
 
 }
+
+
+
 void agregarALaLista(){
 	int opc = 0;
 	cout << "Seleccione el playlist" << endl;
@@ -323,6 +338,11 @@ void menu(){
 
 }
 
+void removeCharsFromString(string &str, char* charsToRemove) {
+	for (unsigned int i = 0; i < strlen(charsToRemove); ++i) {
+		str.erase(remove(str.begin(), str.end(), charsToRemove[i]), str.end());
+	}
+}
 
 
 int _tmain(int argc, _TCHAR* argv[])
@@ -334,10 +354,22 @@ int _tmain(int argc, _TCHAR* argv[])
 	lAutores = new autorList();
 	all = new cancionLDC("All");
 
-	all->agregar("test", "c://algo");
 
+
+
+
+
+
+	string lel = "C:\\Users\\Juan\\Desktop\\a.mp3";
+	removeCharsFromString(lel, "\"");
+	char kek[50];
+	strcpy_s(kek, lel.c_str());
+
+	all->agregar("test", kek);
+	cout << kek << endl;
 
 	lPlayList->insertar(all);
+	system("pause");
 
 
 
