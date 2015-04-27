@@ -48,7 +48,7 @@ int listaDeListas::largo(){
 }
 
 cancionLDC *listaDeListas::contiene(char* _nombre){
-
+	cout << "to Do";
 	return new cancionLDC();
 }
 
@@ -67,4 +67,19 @@ cancionLDC *listaDeListas::get(int nlista){
 
 void listaDeListas::setCab(cancionLDC * c){
 	this->cab = c;
+}
+
+void listaDeListas::mostrar(){
+	cancionLDC* aux = cab;
+	int indx = 0;
+	while (aux!= NULL)
+	{
+		cout << "-" << indx;
+		cout << endl;
+		cout << endl;
+		aux->mostrarLista();
+		aux = aux->getSgt();
+		indx++;
+	}
+	
 }

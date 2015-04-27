@@ -103,8 +103,6 @@ bool autorList::eliminarAutor(char *_autor){
 	return eliminado;
 }
 
-
-
 bool autorList::buscar(char * _autor){
 
 	nodoAutor *aux = getCab();
@@ -120,7 +118,6 @@ bool autorList::buscar(char * _autor){
 	return encontrado = false;
 
 }
-
 
 void autorList::desplegarLISTA(){
 	//Desplegar los datos de la estructura 

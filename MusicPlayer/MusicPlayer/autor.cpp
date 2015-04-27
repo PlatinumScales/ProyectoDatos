@@ -18,3 +18,4 @@ char *autor::getNombre(){
 void autor::setNombre(char * _nombre){
 	strcpy_s(this->nombre, _nombre);
 }
+ 

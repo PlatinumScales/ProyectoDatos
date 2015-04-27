@@ -25,6 +25,8 @@ public:
 	int largo(); 
 	cancionLDC *contiene(char* _nombre); //devuleve una sola lista con todas las canciones que contengan _nombre en todas las listas
 
+	void mostrar();
+
 
 };
 
