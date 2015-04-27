@@ -14,6 +14,29 @@ listaDeListas::~listaDeListas()
 {
 }
 
+
+cancionLDC *listaDeListas::getCab(){
+
+	return cab;
+}
+cancionLDC *listaDeListas::contiene(char* _nombre){
+	cout << "to Do";
+
+	cancionLDC *cab = getCab();
+
+	do{
+
+		if (strcmp(cab->getNombre(), _nombre) == 0){
+
+			return cab;
+		}
+
+	} while (cab != NULL);
+
+
+	return new cancionLDC();
+}
+
 void listaDeListas::insertar(cancionLDC *sl){
 	//Inserta una nueva lista
 	if (size == 0){

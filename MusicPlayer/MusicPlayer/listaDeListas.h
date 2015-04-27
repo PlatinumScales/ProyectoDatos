@@ -11,6 +11,7 @@ private:
 	cancionLDC * ultimo;
 	int size;
 	void setCab(cancionLDC * c);
+	cancionLDC *getCab();
 
 public:
 	listaDeListas();

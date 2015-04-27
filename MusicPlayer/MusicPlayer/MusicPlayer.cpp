@@ -31,6 +31,21 @@ void printTag(){
 
 }
 
+void reproducirLista(cancionLDC *aux){
+	nodoCancion *cab = aux->getCab();
+	do{
+		char temp[80] = "vlc ";
+		strcat_s(temp, cab->getCancion()->getPath());
+
+		system(temp);
+
+	} while (cab != NULL);
+
+
+
+
+}
+
 void agregarCancion(cancionLDC *cldc){
 	//Agrega la cancion a la lista cldc
 	int opc = 0;
@@ -171,26 +186,69 @@ void reproducir(){
 
 		switch (opc){
 
-		case 1:
+		case 1:{
 			lPlayList->mostrar();
 
+			cout << "ingrese el nombre de la playlist a escuchar" << endl;
+			cin >> nombre;
+
+			cancionLDC *aux = lPlayList->contiene(nombre);
+			if (aux != NULL)
+				reproducirLista(aux);
 			break;
-		case 2:
+		}
+		case 2:{
 			lAlbumes->mostrar();
 
+			cout << "ingrese el nombre del album a escuchar" << endl;
+			cin >> nombre;
+
+			cancionLDC *albumes = lAlbumes->contiene(nombre);
+			if (albumes != NULL)
+				reproducirLista(albumes);
 			break;
-		case 3:
+		}
+		case 3:{
 			lGeneros->mostrar();
+			cout << "ingrese el nombre del genero a escuchar" << endl;
+			cin >> nombre;
+
+			cancionLDC *temp = lAlbumes->contiene(nombre);
+			if (temp != NULL)
+				reproducirLista(temp);
 
 			break;
-		case 4:
+		}
+		case 4:{
 			lAutores->desplegarLISTA();
-			break;
+			cout << "ingrese el nombre del autor a escuchar" << endl;
+			cin >> nombre;
 
-		case 5:
+			cancionLDC *listaAutor = lAlbumes->contiene(nombre);
+			if (listaAutor != NULL)
+				reproducirLista(listaAutor);
+			break;
+		}
+		case 5:{
 			all->mostrarLista();
-			break;
 
+			cout << "ingrese el nombre de la cancion a escuchar" << endl;
+			cin >> nombre;
+			all->dirNodo(nombre)->getCancion()->getPath();
+			char test[50];
+			char vlc[80] = "vlc";
+			strcpy_s(test, all->dirNodo(nombre)->getCancion()->getPath());
+			strcat_s(vlc, test);
+			system(vlc);
+
+
+
+
+
+			//	if (todos != NULL)
+			////		reproducirLista(todos);
+			break;
+		}
 		case 0:cout << "Fin del programa..." << endl;
 			break;
 		default: cout << "Opcion no valida..." << endl;
@@ -202,7 +260,6 @@ void reproducir(){
 
 
 }
-
 
 void eliminar(){
 
