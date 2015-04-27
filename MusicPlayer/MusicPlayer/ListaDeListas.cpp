@@ -69,7 +69,7 @@ void listaDeListas::setCab(cancionLDC * c){
 	this->cab = c;
 }
 
-void listaDeListas::mostrar(){
+void listaDeListas::mostrarTodo(){
 	cancionLDC* aux = cab;
 	int indx = 0;
 	while (aux != NULL)
@@ -85,7 +85,7 @@ void listaDeListas::mostrar(){
 }
 
 
-void listaDeListas::mostrarTodo(){
+void listaDeListas::mostrar(){
 	cancionLDC* aux = cab;
 	int indx = 0;
 	while (aux!= NULL)
