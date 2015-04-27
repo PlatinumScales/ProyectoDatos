@@ -209,13 +209,15 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	cancionLDC * all = new cancionLDC("All");
 
-	all->agregar("test");
+	all->agregar("test", "c://algo");
 
-	lPlayList->insertar(all);
+
+	 lPlayList->insertar(all);
+
+	all->mostrarLista();
 
 	//menu();
 
-	autorList *AL = new autorList();
 	/*
 	AL->insertarAutor(new autor("sip"));
 	AL->insertarAutor(new autor("kek"));

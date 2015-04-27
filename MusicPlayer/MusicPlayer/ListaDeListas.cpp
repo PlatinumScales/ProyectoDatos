@@ -16,7 +16,7 @@ listaDeListas::~listaDeListas()
 
 void listaDeListas::insertar(cancionLDC *sl){
 	//Inserta una nueva lista
-	if (size > 0){
+	if (size == 0){
 		this->cab = sl;
 		this->ultimo = sl;
 	}
@@ -63,4 +63,8 @@ cancionLDC *listaDeListas::get(int nlista){
 		}
 		return aux;
 	}
+}
+
+void listaDeListas::setCab(cancionLDC * c){
+	this->cab = c;
 }
