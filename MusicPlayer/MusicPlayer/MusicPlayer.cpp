@@ -83,6 +83,81 @@ void reproducir(){
 
 }
 
+
+void eliminar(){
+
+	int x;
+	int opc = 0;
+	do {
+		system("cls");
+		cout << "                          ------------------" << endl;
+		cout << "                         |   Music Player   |" << endl;
+		cout << "                         |                  |" << endl;
+		cout << "                          ------------------" << endl;
+		cout << "_______________________________________________________________________________" << endl;
+		cout << endl;
+		cout << endl;
+		cout << "                            Eliminar Musica" << endl;
+		cout << endl;
+		cout << "( 1 ) Desplegar todas" << endl;
+		cout << "( 2 ) Eliminar por Autor" << endl;
+		cout << "( 4 ) Eliminar por Nombre" << endl;
+		cout << "( 0 ) Regresar" << endl;
+		cin >> opc;
+
+		switch (opc){
+		case 1:
+
+
+			break;
+		case 0:cout << " " << endl;
+			break;
+		default: cout << "Opcion no valida..." << endl;
+
+		}// fin del switch
+		system("pause");
+
+	} while (opc != 0);
+
+
+}
+void playlists(){
+
+	int x;
+	int opc = 0;
+	do {
+		system("cls");
+		cout << "                          ------------------" << endl;
+		cout << "                         |   Music Player   |" << endl;
+		cout << "                         |                  |" << endl;
+		cout << "                          ------------------" << endl;
+		cout << "_______________________________________________________________________________" << endl;
+		cout << endl;
+		cout << endl;
+		cout << "                            Editar Playlists" << endl;
+		cout << endl;
+		cout << "( 1 ) Nueva Playlost" << endl;
+		cout << "( 2 ) Eliminar Playlist" << endl;
+		cout << "( 3 ) Editar Playlist" << endl;
+		cout << "( 0 ) Regresar" << endl;
+		cin >> opc;
+
+		switch (opc){
+		case 1:
+
+
+			break;
+		case 0:cout << "" << endl;
+			break;
+		default: cout << "Opcion no valida..." << endl;
+
+		}// fin del switch
+		system("pause");
+
+	} while (opc != 0);
+
+
+}
 	
 void menu(){
 
@@ -114,6 +189,14 @@ void menu(){
 			break;
 		case 2:
 			agregar();
+
+			break;
+		case 3:
+			eliminar();
+
+			break;
+		case 4:
+			playlists();
 
 			break;
 		case 0:cout << "Fin del programa..." << endl;
