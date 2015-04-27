@@ -232,6 +232,16 @@ void eliminar(){
 
 
 }
+void agregarALaLista(){
+	int opc = 0;
+	cout << "Seleccione el playlist" << endl;
+	lPlayList->mostrar();
+	cin >> opc;
+	if (lPlayList->get(opc) != NULL){
+		cout << "Seleccione la cancion que desea Agregar" << endl;
+		
+	}
+}
 
 void playlists(){
 
@@ -252,7 +262,7 @@ void playlists(){
 			agregarLista(NULL, "playList");
 			break;
 		case 2:
-			
+			agregarALaLista();
 			break;
 		case 3:
 
@@ -333,16 +343,6 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	menu();
 
-	/*
-	AL->insertarAutor(new autor("sip"));
-	AL->insertarAutor(new autor("kek"));
-	AL->insertarAutor(new autor("lel"));
-	AL->insertarAutor(new autor("ktopkek"));
-	AL->insertarAutor(new autor("kek"));
-	AL->eliminarAutor("kek");
-	AL->eliminarAutor("kek");
-	AL->desplegarLISTA();
-	*/
 	system("pause");
 	return 0;
 }

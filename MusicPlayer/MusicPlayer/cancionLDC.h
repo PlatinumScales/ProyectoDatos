@@ -26,6 +26,8 @@ public:
 	bool vacia();
 	nodoCancion *dirNodo(char *);
 
+	char* getNombre();
+
 
 	bool agregar(cancion *);
 	bool agregar(nodoCancion * );
@@ -33,6 +35,9 @@ public:
 	bool eliminar(char * );
 	void mostrarLista();
 	void removeNodo(nodoCancion *aux);
+
+	cancion * get(int i);
+
 //	cancionLDC * clone();
 
 	cancionLDC *getAnte();

@@ -72,12 +72,25 @@ void listaDeListas::setCab(cancionLDC * c){
 void listaDeListas::mostrar(){
 	cancionLDC* aux = cab;
 	int indx = 0;
-	while (aux!= NULL)
+	while (aux != NULL)
 	{
-		cout << "-" << indx;
+		cout << "-" << indx << aux->getNombre() << endl;
 		cout << endl;
 		cout << endl;
 		aux->mostrarLista();
+		aux = aux->getSgt();
+		indx++;
+	}
+
+}
+
+
+void listaDeListas::mostrarTodo(){
+	cancionLDC* aux = cab;
+	int indx = 0;
+	while (aux!= NULL)
+	{
+		cout << "-" << indx << aux->getNombre() << endl;
 		aux = aux->getSgt();
 		indx++;
 	}
