@@ -19,3 +19,7 @@ void autor::setNombre(char * _nombre){
 	strcpy_s(this->nombre, _nombre);
 }
  
+bool autor::insertarAlbum(cancionLDC * alb){
+	albumes->insertar(alb);
+	return true;
+}

@@ -31,7 +31,6 @@ void printTag(){
 
 }
 
-
 void agregarCancion(cancionLDC *cldc){
 	//Agrega la cancion a la lista cldc
 	int opc = 0;
@@ -40,38 +39,53 @@ void agregarCancion(cancionLDC *cldc){
 	cin >> nombre;
 	cout << "ingrese la ruta" << endl;
 	cin >> path;
-	cldc->agregar(nombre, path);
-	cout << "to do all->agregar(c) ";
-
+	c = new cancion(nombre, path);
+	if (cldc != NULL){
+		cldc->agregar(c);
+	}
+	all->agregar(c);
 }
 
-cancionLDC* agregarAlbum(autor *a){
+cancionLDC* agregarLista(autor *a, char * tipo){
+
 	int opc = 1;
-	cout << "ingrese el nombre del Album";
+	cout << "ingrese el nombre del " << tipo << endl;
 	cin >> nombre;
 	cancionLDC *cldc = new cancionLDC();
 
+	
+
 	while (opc == 1) {
-		agregarCancion(cldc);
-		cout << "Desea agregar otra cancion a esta Album ? " << endl;
+		cout << "Desea agregar una cancion al " << tipo << endl;
 		cout << "	1-Si " << endl;
 		cout << "	0-No" << endl;
 		cin >> opc;
+		if (opc == 1){
+			agregarCancion(cldc);
+		}
 	}
 
 	cout << endl;
 	if (a != NULL){
 		a->insertarAlbum(cldc);
 	}
-	lAlbumes->insertar(cldc);
-
+	if (strcmp(tipo, "album") == 0){
+		lAlbumes->insertar(cldc);
+	}
+	if (strcmp(tipo, "genero") == 0){
+		lGeneros->insertar(cldc);
+	}
+	if (strcmp(tipo, "playList") == 0){
+		lPlayList->insertar(cldc);
+	}
+	
 	return cldc;
 }
 
 void agregarAutor(){
 	autor *a = new autor();
 	int opc = 0;
-	cout << "ingrese el nombre del autor";
+	cout << "ingrese el nombre del autor" << endl;
 	cin >> nombre;
 	a->setNombre(nombre);
 	lAutores->insertarAutor(a);
@@ -83,7 +97,7 @@ void agregarAutor(){
 
 	switch (opc){
 	case 1:
-		agregarAlbum(a);
+		agregarLista(a, "album");
 		break;
 	case 0:
 		break;
@@ -115,24 +129,18 @@ void agregar(){
 			break;
 		case 2:
 			cancionLDC *g;
-
 			cout << "ingrese el nombre del genero" << endl;
 			cin >> nombre;
 			g = new cancionLDC(nombre);
 			lGeneros->insertar(g);
 			break;
-
 		case 3:
-			agregarAlbum(NULL);
-
+			agregarLista(NULL, "album" );
 			break;
 		case 4:
-
-
+			agregarCancion(NULL);
 			break;
-
 		case 0:
-			menu();
 			break;
 		default: cout << "Opcion no valida..." << endl;
 
@@ -269,7 +277,8 @@ void menu(){
 		cout << "( 1 ) Reproducir musica" << endl;
 		cout << "( 2 ) Agregar canciones" << endl;
 		cout << "( 3 ) Eliminar canciones" << endl;
-		cout << "( 4 ) Agregar/Editar Playlists" << endl;
+		cout << "( 4 ) Crear Playlists" << endl;
+		cout << "( 5 ) Modificar " << endl;
 		cout << "( 0 ) Salir" << endl;
 		cin >> opc;
 
