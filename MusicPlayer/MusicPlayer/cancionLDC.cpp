@@ -302,7 +302,7 @@ cancion * cancionLDC::get(int i){
 		c = NULL;
 	}
 	else{
-		if (i = 0){
+		if (i == 0){
 			c = getCab()->getCancion();
 		}
 		else{

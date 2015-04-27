@@ -51,7 +51,7 @@ cancionLDC* agregarLista(autor *a, char * tipo){
 	int opc = 1;
 	cout << "ingrese el nombre del " << tipo << endl;
 	cin >> nombre;
-	cancionLDC *cldc = new cancionLDC();
+	cancionLDC *cldc = new cancionLDC(nombre);
 
 	
 
@@ -249,12 +249,19 @@ void eliminar(){
 
 void agregarALaLista(){
 	int opc = 0;
+	int opc2 = 0;
 	cout << "Seleccione el playlist" << endl;
 	lPlayList->mostrar();
 	cin >> opc;
 	if (lPlayList->get(opc) != NULL){
 		cout << "Seleccione la cancion que desea Agregar" << endl;
-		
+		all->mostrarLista();
+		cin >> opc2;
+		cout << all->get(opc2)->getNombre();
+		//lPlayList->get(opc)->agregar();
+	}
+	else{
+		cout << "Seleccion no valida" << endl;
 	}
 }
 

@@ -11,7 +11,11 @@
 #include <tchar.h>
 #include <stdlib.h>
 #include <iostream>
-
+#include <sstream>
+#include <algorithm>
+#include<iostream> 
+#include <algorithm>
+#include <cstring>.
 using namespace std;
 
 

@@ -58,7 +58,7 @@ cancionLDC *listaDeListas::get(int nlista){
 	}
 	else{
 		cancionLDC* aux = cab;
-		for (int i = 0; i < size; i++){
+		for (int i = 0; i < nlista; i++){
 			aux = aux->getSgt();
 		}
 		return aux;
@@ -90,7 +90,7 @@ void listaDeListas::mostrar(){
 	int indx = 0;
 	while (aux!= NULL)
 	{
-		cout << "-" << indx << aux->getNombre() << endl;
+		cout << "( " << indx <<  " )" << aux->getNombre() << endl;
 		aux = aux->getSgt();
 		indx++;
 	}
