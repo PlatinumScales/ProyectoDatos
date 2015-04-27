@@ -196,6 +196,39 @@ int cancionLDC::getSize(){
 		return ok;
 	
 	}
+	bool cancionLDC::agregar(cancion *test){
+		// insertar al final y no se puede insertar repetidos
+		nodoCancion *nuevo = new nodoCancion(test);
+		bool ok = true;
+		if (vacia())
+		{
+
+			nuevo->setAnte(nuevo);
+			nuevo->setSgte(nuevo);
+			setCab(nuevo);
+		}
+		else{
+
+			//si no esta insertando la cabeza
+			nodoCancion *aux = getCab();
+			do {
+				if (strcmp(aux->getCancion()->getNombre(), nuevo->getCancion()->getNombre()) == 0){
+					ok = false;
+				}
+				aux = aux->getSgte();
+			} while (aux != getCab() && ok);
+			if (ok){
+
+				nuevo->setAnte(getCab()->getAnte());
+				nuevo->setSgte(getCab());
+				getCab()->getAnte()->setSgte(nuevo);
+				getCab()->setAnte(nuevo);
+			}
+		}
+
+		return ok;
+
+	}
 	/*
 	bool cancionLDC::eliminar(char * nombre){
 	

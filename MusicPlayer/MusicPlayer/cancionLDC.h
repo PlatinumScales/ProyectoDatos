@@ -26,6 +26,8 @@ public:
 	bool vacia();
 	nodoCancion *dirNodo(char *);
 
+
+	bool agregar(cancion *);
 	bool agregar(nodoCancion * );
 	bool agregar(char *,char* );
 	bool eliminar(char * );

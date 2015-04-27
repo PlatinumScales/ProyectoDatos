@@ -4,6 +4,7 @@ class nodoCancion
 {
 public:
 	nodoCancion();
+	nodoCancion(cancion *);
 	nodoCancion(char *name, char*path);
 	~nodoCancion();
 	nodoCancion *getSgte();

@@ -9,6 +9,11 @@ nodoCancion::nodoCancion()
 {
 }
 
+nodoCancion::nodoCancion(cancion *lel)
+{
+	song = lel;
+}
+
 
 nodoCancion::~nodoCancion()
 {
