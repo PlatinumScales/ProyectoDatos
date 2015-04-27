@@ -72,7 +72,7 @@ int cancionLDC::getSize(){
 			nodoCancion *aux = getCab();
 
 			do{
-				if (strcmp(aux->getNombre(), nombre) == 0){
+				if (strcmp(aux->getCancion()->getNombre(), nombre) == 0){
 					//encontro el nodo
 
 					return aux;
@@ -89,12 +89,12 @@ int cancionLDC::getSize(){
 
 	}
 
-	bool cancionLDC::agregar(char *nombre ){
+	bool cancionLDC::agregar(char *nombre, char * path ){
 		// insertar al final y no se puede insertar repetidos
 		bool ok = true;
 		if (vacia())
 		{
-			nodoCancion *nuevo = new nodoCancion(nombre);
+			nodoCancion *nuevo = new nodoCancion(nombre,path);
 			nuevo->setAnte(nuevo);
 			nuevo->setSgte(nuevo);
 			setCab(nuevo);
@@ -104,13 +104,13 @@ int cancionLDC::getSize(){
 			//si no esta insertando la cabeza
 			nodoCancion *aux = getCab();
 			do {
-				if (strcmp( aux->getNombre(),nombre ) == 0){
+				if (strcmp( aux->getCancion()->getNombre(),nombre ) == 0){
 					ok = false;
 				}
 				aux = aux->getSgte();
 			} while (aux != getCab() && ok);
 			if (ok){
-				nodoCancion *nuevaCancion = new nodoCancion(nombre);
+				nodoCancion *nuevaCancion = new nodoCancion(nombre,path);
 				nuevaCancion->setAnte(getCab()->getAnte());
 				nuevaCancion->setSgte(getCab());
 				getCab()->getAnte()->setSgte(nuevaCancion);
@@ -131,7 +131,7 @@ int cancionLDC::getSize(){
 			nodoCancion  *aux = getCab();
 
 			do{
-				if (strcmp(aux->getNombre(), nombre) == 0){
+				if (strcmp(aux->getCancion()->getNombre(), nombre) == 0){
 					//el valor de aux se debe eliminar entonces.
 
 					if (getSize() == 1){
@@ -179,7 +179,7 @@ int cancionLDC::getSize(){
 			//si no esta insertando la cabeza
 			nodoCancion *aux = getCab();
 			do {
-				if (strcmp( aux->getNombre(),nuevo->getNombre() ) == 0){
+				if (strcmp( aux->getCancion()->getNombre(),nuevo->getCancion()->getNombre() ) == 0){
 					ok = false;
 				}
 				aux = aux->getSgte();
@@ -243,7 +243,7 @@ int cancionLDC::getSize(){
 		nodoCancion *aux = getCab();
 		if (aux != NULL){
 			do {
-				cout << "Nodo posicion en memoria: " << aux->getNombre() << endl;
+				cout << "Nodo posicion en memoria: " << aux->getCancion()->getNombre() << endl;
 				aux = aux->getSgte();
 			} while (aux != getCab());
 			

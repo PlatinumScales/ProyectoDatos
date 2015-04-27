@@ -13,7 +13,7 @@ private:
 
 public:
 	cancionLDC();
-	cancionLDC( char *);
+	cancionLDC(char *);
 	~cancionLDC();
 
 	//implementacion
@@ -27,7 +27,7 @@ public:
 	nodoCancion *dirNodo(char *);
 
 	bool agregar(nodoCancion * );
-	bool agregar(char * );
+	bool agregar(char *,char* );
 	bool eliminar(char * );
 	void mostrarLista();
 	void removeNodo(nodoCancion *aux);
