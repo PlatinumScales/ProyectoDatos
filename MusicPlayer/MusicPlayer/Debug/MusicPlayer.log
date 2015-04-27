@@ -1,24 +1,15 @@
-﻿Build started 4/26/2015 5:44:19 PM.
-     1>Project "C:\Users\Alejandro\Documents\Proyecto Estructuras de Datos\ProyectoDatos\MusicPlayer\MusicPlayer\MusicPlayer.vcxproj" on node 2 (Rebuild target(s)).
+﻿Build started 4/26/2015 7:38:33 PM.
+     1>Project "C:\Users\Juan\Desktop\ProyectoDatos\MusicPlayer\MusicPlayer\MusicPlayer.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt autor.cpp autorList.cpp cancion.cpp cancionLDC.cpp listaDeListas.cpp MusicPlayer.cpp nodoAutor.cpp nodoCancion.cpp stdafx.cpp
-         stdafx.cpp
-         nodoCancion.cpp
-         nodoAutor.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt MusicPlayer.cpp
          MusicPlayer.cpp
-     1>c:\users\alejandro\documents\proyecto estructuras de datos\proyectodatos\musicplayer\musicplayer\musicplayer.cpp(12): warning C4101: 'x' : unreferenced local variable
-     1>c:\users\alejandro\documents\proyecto estructuras de datos\proyectodatos\musicplayer\musicplayer\musicplayer.cpp(49): warning C4101: 'x' : unreferenced local variable
-     1>c:\users\alejandro\documents\proyecto estructuras de datos\proyectodatos\musicplayer\musicplayer\musicplayer.cpp(89): warning C4101: 'x' : unreferenced local variable
-         listaDeListas.cpp
-         cancionLDC.cpp
-         cancion.cpp
-         autorList.cpp
-         autor.cpp
-         Generating Code...
-     1>c:\users\alejandro\documents\proyecto estructuras de datos\proyectodatos\musicplayer\musicplayer\autorlist.cpp(91): warning C4715: 'autorList::eliminarAutor' : not all control paths return a value
-     1>c:\users\alejandro\documents\proyecto estructuras de datos\proyectodatos\musicplayer\musicplayer\autorlist.cpp(122): warning C4715: 'autorList::buscar' : not all control paths return a value
+     1>c:\users\juan\desktop\proyectodatos\musicplayer\musicplayer\musicplayer.cpp(13): warning C4101: 'x' : unreferenced local variable
+     1>c:\users\juan\desktop\proyectodatos\musicplayer\musicplayer\musicplayer.cpp(50): warning C4101: 'x' : unreferenced local variable
+     1>c:\users\juan\desktop\proyectodatos\musicplayer\musicplayer\musicplayer.cpp(90): warning C4101: 'x' : unreferenced local variable
+     1>c:\users\juan\desktop\proyectodatos\musicplayer\musicplayer\musicplayer.cpp(127): warning C4101: 'x' : unreferenced local variable
+     1>c:\users\juan\desktop\proyectodatos\musicplayer\musicplayer\musicplayer.cpp(165): warning C4101: 'x' : unreferenced local variable
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Alejandro\Documents\Proyecto Estructuras de Datos\ProyectoDatos\MusicPlayer\Debug\MusicPlayer.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Alejandro\Documents\Proyecto Estructuras de Datos\ProyectoDatos\MusicPlayer\Debug\MusicPlayer.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Alejandro\Documents\Proyecto Estructuras de Datos\ProyectoDatos\MusicPlayer\Debug\MusicPlayer.lib" /MACHINE:X86 Debug\autor.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Juan\Desktop\ProyectoDatos\MusicPlayer\Debug\MusicPlayer.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Juan\Desktop\ProyectoDatos\MusicPlayer\Debug\MusicPlayer.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Juan\Desktop\ProyectoDatos\MusicPlayer\Debug\MusicPlayer.lib" /MACHINE:X86 Debug\autor.obj
          Debug\autorList.obj
          Debug\cancion.obj
          Debug\cancionLDC.obj
@@ -27,9 +18,9 @@
          Debug\nodoAutor.obj
          Debug\nodoCancion.obj
          Debug\stdafx.obj
-         MusicPlayer.vcxproj -> C:\Users\Alejandro\Documents\Proyecto Estructuras de Datos\ProyectoDatos\MusicPlayer\Debug\MusicPlayer.exe
-     1>Done Building Project "C:\Users\Alejandro\Documents\Proyecto Estructuras de Datos\ProyectoDatos\MusicPlayer\MusicPlayer\MusicPlayer.vcxproj" (Rebuild target(s)).
+         MusicPlayer.vcxproj -> C:\Users\Juan\Desktop\ProyectoDatos\MusicPlayer\Debug\MusicPlayer.exe
+     1>Done Building Project "C:\Users\Juan\Desktop\ProyectoDatos\MusicPlayer\MusicPlayer\MusicPlayer.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:04.15
+Time Elapsed 00:00:00.70

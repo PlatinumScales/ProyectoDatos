@@ -4,8 +4,9 @@
 #include "stdafx.h"
 #include "nodoCancion.h"
 #include "cancionLDC.h"
-
-
+#include "autor.h"
+#include "autorList.h"
+#include "nodoAutor.h"
 
 void agregar(){
 
@@ -215,5 +216,21 @@ void menu(){
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	menu();
+	//menu();
+
+	autorList *AL = new autorList();
+	
+
+	AL->insertarAutor(new autor("sip"));
+	AL->insertarAutor(new autor("kek"));
+	AL->insertarAutor(new autor("lel"));
+	AL->insertarAutor(new autor("ktopkek"));
+	AL->insertarAutor(new autor("kek"));
+	AL->eliminarAutor("kek");
+	AL->eliminarAutor("kek");
+	AL->desplegarLISTA();
+	
+
+	system("pause");
+	return 0;
 }

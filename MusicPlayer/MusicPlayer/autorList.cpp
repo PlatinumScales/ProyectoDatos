@@ -84,7 +84,7 @@ bool autorList::eliminarAutor(char *_autor){
 		if (strcmp(aux->getOAutor()->getNombre(), _autor) == 0){
 			setCab(aux->getSgte());
 			delete aux;
-			eliminado = true;
+			return true;
 		}
 		//revisar el cuerpo
 		while (aux->getSgte() != NULL){
@@ -92,7 +92,7 @@ bool autorList::eliminarAutor(char *_autor){
 				nodoAutor *aux2 = aux->getSgte();
 				aux->setSgte(aux2->getSgte());
 				delete aux2;
-				eliminado = true;
+				return true;
 			}
 			else
 			{
