@@ -2,6 +2,7 @@
 #include"stdafx.h"
 autor::autor(void)
 {
+	albumes = new listaDeListas();
 }
 
 

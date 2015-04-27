@@ -56,7 +56,7 @@ cancionLDC* agregarLista(autor *a, char * tipo){
 	
 
 	while (opc == 1) {
-		cout << "Desea agregar una cancion al " << tipo << endl;
+		cout << "Desea agregar una nueva cancion al " << tipo << endl;
 		cout << "	1-Si " << endl;
 		cout << "	0-No" << endl;
 		cin >> opc;
@@ -219,8 +219,7 @@ void eliminar(){
 
 		switch (opc){
 		case 1:
-
-
+			
 			break;
 		case 0:cout << " " << endl;
 			break;
@@ -242,16 +241,20 @@ void playlists(){
 		printTag();
 		cout << "                            Editar Playlists" << endl;
 		cout << endl;
-		cout << "( 1 ) Nueva Playlost" << endl;
-		cout << "( 2 ) Eliminar Playlist" << endl;
-		cout << "( 3 ) Editar Playlist" << endl;
+		cout << "( 1 ) Nueva Playlist" << endl;
+		cout << "( 2 ) Editar Playlist" << endl;
+		cout << "( 3 ) Eliminar Playlist" << endl;
 		cout << "( 0 ) Regresar" << endl;
 		cin >> opc;
 
 		switch (opc){
 		case 1:
-
-
+			agregarLista(NULL, "playList");
+			break;
+		case 2:
+			
+			break;
+		case 3:
 
 			break;
 		case 0:cout << "" << endl;
@@ -278,7 +281,6 @@ void menu(){
 		cout << "( 2 ) Agregar canciones" << endl;
 		cout << "( 3 ) Eliminar canciones" << endl;
 		cout << "( 4 ) Crear Playlists" << endl;
-		cout << "( 5 ) Modificar " << endl;
 		cout << "( 0 ) Salir" << endl;
 		cin >> opc;
 
