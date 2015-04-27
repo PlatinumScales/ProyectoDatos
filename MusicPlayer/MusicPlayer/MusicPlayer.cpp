@@ -2,29 +2,41 @@
 //
 
 #include "stdafx.h"
-#include "nodoCancion.h"
+#include  "autor.h"
 #include "cancionLDC.h"
 #include "autor.h"
 #include "autorList.h"
-#include "nodoAutor.h"
+#include  "listaDeListas.h"
+
+
+listaDeListas *lPlayList;
+listaDeListas *lAlbumes;
+listaDeListas *lGeneros;
+autorList *lAutores;
+
+void printTag(){
+	system("cls");
+	cout << "                          ------------------" << endl;
+	cout << "                         |   /\/\/\/\/\/\/\   |" << endl;
+	cout << "                         |  < Music Player >  |" << endl;
+	cout << "                         |   \/\/\/\/\/\/\/   |" << endl;
+	cout << "                          ------------------" << endl;
+	cout << "_______________________________________________________________________________" << endl;
+	cout << endl;
+	cout << endl;
+
+}
 
 void agregar(){
 
 	int x;
 	int opc = 0;
 	do {
-		system("cls");
-		cout << "                          ------------------" << endl;
-		cout << "                         |   Music Player   |" << endl;
-		cout << "                         |                  |" << endl;
-		cout << "                          ------------------" << endl;
-		cout << "_______________________________________________________________________________" << endl;
-		cout << endl;
-		cout << endl;
 		cout << "                            Agregar Canciones" << endl;
 		cout << endl;
+		printTag();
 		cout << "( 1 ) Prototipo" << endl;
-	
+
 		cout << "( 0 ) Regresar" << endl;
 		cin >> opc;
 
@@ -50,26 +62,21 @@ void reproducir(){
 	int x;
 	int opc = 0;
 	do {
-		system("cls");
-		cout << "                          ------------------" << endl;
-		cout << "                         |   Music Player   |" << endl;
-		cout << "                         |                  |" << endl;
-		cout << "                          ------------------" << endl;
-		cout << "_______________________________________________________________________________" << endl;
-		cout << endl;
-		cout << endl;
+		printTag();
+
 		cout << "                            Reproducir Musica" << endl;
 		cout << endl;
-		cout << "( 1 ) Desplegar todas" << endl;
-		cout << "( 2 ) Buscar por Autor" << endl;
-		cout << "( 3 ) Buscar por Genero" << endl;
-		cout << "( 4 ) Buscar por Nombre" << endl;
+		cout << "( 1 ) Playlist" << endl;
+		cout << "( 2 ) Album" << endl;
+		cout << "( 3 ) Genero" << endl;
+		cout << "( 4 ) Todas" << endl;
 		cout << "( 0 ) Regresar" << endl;
 		cin >> opc;
 
 		switch (opc){
+
 		case 1:
-			
+
 
 			break;
 		case 0:cout << "Fin del programa..." << endl;
@@ -90,14 +97,7 @@ void eliminar(){
 	int x;
 	int opc = 0;
 	do {
-		system("cls");
-		cout << "                          ------------------" << endl;
-		cout << "                         |   Music Player   |" << endl;
-		cout << "                         |                  |" << endl;
-		cout << "                          ------------------" << endl;
-		cout << "_______________________________________________________________________________" << endl;
-		cout << endl;
-		cout << endl;
+		printTag();
 		cout << "                            Eliminar Musica" << endl;
 		cout << endl;
 		cout << "( 1 ) Desplegar todas" << endl;
@@ -127,14 +127,7 @@ void playlists(){
 	int x;
 	int opc = 0;
 	do {
-		system("cls");
-		cout << "                          ------------------" << endl;
-		cout << "                         |   Music Player   |" << endl;
-		cout << "                         |                  |" << endl;
-		cout << "                          ------------------" << endl;
-		cout << "_______________________________________________________________________________" << endl;
-		cout << endl;
-		cout << endl;
+		printTag();
 		cout << "                            Editar Playlists" << endl;
 		cout << endl;
 		cout << "( 1 ) Nueva Playlost" << endl;
@@ -159,34 +152,26 @@ void playlists(){
 
 
 }
-	
+
 void menu(){
 
 	int x;
 	int opc = 0;
 	do {
-		system("cls");
-		cout << "                          ------------------" << endl;
-		cout << "                         |   Music Player   |" << endl;
-		cout << "                         |                  |" << endl;
-		cout << "                          ------------------" << endl;
-		cout << "_______________________________________________________________________________" << endl;
-		cout << endl;
-		cout << endl;
+		printTag();
 		cout << "                            Menu Principal" << endl;
 		cout << endl;
 		cout << "( 1 ) Reproducir musica" << endl;
 		cout << "( 2 ) Agregar canciones" << endl;
 		cout << "( 3 ) Eliminar canciones" << endl;
-		cout << "( 4 ) Editar Playlists" << endl;
+		cout << "( 4 ) Agregar/Editar Playlists" << endl;
 		cout << "( 0 ) Salir" << endl;
 		cin >> opc;
-
 
 		switch (opc){
 		case 1:
 			reproducir();
-	
+
 			break;
 		case 2:
 			agregar();
@@ -216,11 +201,22 @@ void menu(){
 
 int _tmain(int argc, _TCHAR* argv[])
 {
+
+	lPlayList = new listaDeListas();
+	lAlbumes = new listaDeListas();;
+	lGeneros = new listaDeListas();;
+	lAutores = new autorList();
+
+	cancionLDC * all = new cancionLDC("All");
+
+	all->agregar("test");
+
+	lPlayList->insertar(all);
+
 	//menu();
 
 	autorList *AL = new autorList();
-	
-
+	/*
 	AL->insertarAutor(new autor("sip"));
 	AL->insertarAutor(new autor("kek"));
 	AL->insertarAutor(new autor("lel"));
@@ -229,8 +225,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	AL->eliminarAutor("kek");
 	AL->eliminarAutor("kek");
 	AL->desplegarLISTA();
-	
-
+	*/
 	system("pause");
 	return 0;
 }
