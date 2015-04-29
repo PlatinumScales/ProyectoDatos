@@ -74,7 +74,7 @@ cancionLDC* agregarLista(autor *a, char * tipo){
 	cin >> nombre;
 	cancionLDC *cldc = new cancionLDC(nombre);
 
-	
+
 
 	while (opc == 1) {
 		cout << "Desea agregar una nueva cancion al " << tipo << endl;
@@ -99,7 +99,7 @@ cancionLDC* agregarLista(autor *a, char * tipo){
 	if (strcmp(tipo, "playList") == 0){
 		lPlayList->insertar(cldc);
 	}
-	
+
 	return cldc;
 }
 
@@ -156,7 +156,7 @@ void agregar(){
 			lGeneros->insertar(g);
 			break;
 		case 3:
-			agregarLista(NULL, "album" );
+			agregarLista(NULL, "album");
 			break;
 		case 4:
 			agregarCancion(NULL);
@@ -236,18 +236,18 @@ void reproducir(){
 			break;
 		}
 		case 5:{
-			all->mostrarLista();	
+			all->mostrarLista();
 			cout << "ingrese el nombre de la cancion a escuchar" << endl;
 			cin >> nombre;
 			if (all->dirNodo(nombre) != NULL){
-			all->dirNodo(nombre)->getCancion()->getPath();
-			char test[50];
-			char vlc[80] = "vlc ";
-			strcpy_s(test, all->dirNodo(nombre)->getCancion()->getPath());
-			strcat_s(vlc, test);
-			system(vlc);
+				all->dirNodo(nombre)->getCancion()->getPath();
+				char test[50];
+				char vlc[80] = "vlc ";
+				strcpy_s(test, all->dirNodo(nombre)->getCancion()->getPath());
+				strcat_s(vlc, test);
+				system(vlc);
 
-}
+			}
 
 
 
@@ -308,8 +308,6 @@ void eliminar(){
 
 }
 
-
-
 void agregarALaLista(){
 	int opc = 0;
 	int opc2 = 0;
@@ -350,7 +348,10 @@ void playlists(){
 			agregarALaLista();
 			break;
 		case 3:
-
+			cout << "Seleccione el playlist" << endl;
+			lPlayList->mostrar();
+			cin >> opc;
+			delete lPlayList->get(opc);
 			break;
 		case 0:cout << "" << endl;
 			break;
@@ -361,6 +362,49 @@ void playlists(){
 
 	} while (opc != 0);
 
+
+}
+
+void buscar(){
+	int x;
+	int opc = 0;
+	cancion *c;
+	cancionLDC *lc = new cancionLDC();
+	do {
+		printTag();
+		cout << "                            Buscar Canciones" << endl;
+		cout << endl;
+		cout << endl;
+
+		cout << "Ingrese el nombre de la cancion que desea buscar" << endl;
+		cin >> nombre;
+		printTag();
+		lc = all->contains(nombre);
+		cout << " Resultados, Escoje una cancion" << endl;
+		lc->mostrarLista();
+		cin >> x;
+		c = lc->get(x);
+		cout << "Que desea hacer?" << endl;
+		cout << "( 1 ) Agregarla a un playlist" << endl;;
+		cout << "( 0 ) Salir" << endl;
+
+		switch (opc){
+
+		case 1:
+			cout << "Seleccione el playlist" << endl;
+			lPlayList->mostrar();
+			cin >> x;
+			lPlayList->get(x)->agregar(c);
+			system("pause");
+			break;
+		case 0:cout << "Fin del programa..." << endl;
+			break;
+		default:
+			cout << "Opcion no valida..." << endl;
+			break;
+		}
+
+	} while (opc != 0);
 
 }
 
@@ -376,8 +420,10 @@ void menu(){
 		cout << "( 2 ) Agregar canciones" << endl;
 		cout << "( 3 ) Eliminar canciones" << endl;
 		cout << "( 4 ) Crear Playlists" << endl;
+		cout << "( 5 ) Buscar Canciones" << endl;
 		cout << "( 0 ) Salir" << endl;
 		cin >> opc;
+
 
 		switch (opc){
 		case 1:
@@ -394,6 +440,11 @@ void menu(){
 			break;
 		case 4:
 			playlists();
+
+			break;
+
+		case 5:
+			buscar();
 
 			break;
 		case 0:cout << "Fin del programa..." << endl;
@@ -417,17 +468,11 @@ void removeCharsFromString(string &str, char* charsToRemove) {
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-
 	lPlayList = new listaDeListas();
 	lAlbumes = new listaDeListas();;
 	lGeneros = new listaDeListas();;
 	lAutores = new autorList();
 	all = new cancionLDC("All");
-
-
-
-
-
 
 
 	string lel = "C:\\Users\\Juan\\Desktop\\a.mp3";
@@ -440,8 +485,6 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	lPlayList->insertar(all);
 	//system("pause");
-
-
 
 	menu();
 

@@ -322,3 +322,53 @@ cancion * cancionLDC::get(int i){
 	}
 	return c;
 }
+
+bool cancionLDC::buscarGenero(char * _genero){// busca por el genero 
+
+	nodoCancion *aux = getCab();
+	bool encontrado = false;
+	do{
+		if (strcmp(aux->getNombre(), _genero) != 0)
+			aux = aux->getSgte();
+
+		else {
+			return encontrado = true;
+		}
+	} while (aux != getCab());
+	return encontrado = false;
+
+}
+
+bool cancionLDC::buscarCancion(char * _cancion){// busca por el nombre de la cancion
+
+	nodoCancion *aux = getCab();
+	bool encontrado = false;
+	do{
+		if (strcmp(aux->getCancion()->getNombre(), _cancion) != 0)
+			aux = aux->getSgte();
+
+		else {
+			return encontrado = true;
+		}
+	} while (aux != getCab());
+
+	return encontrado = false;
+
+}
+
+
+cancionLDC*  cancionLDC::contains(char* _nombre){
+	cancionLDC *lc = new cancionLDC();
+	nodoCancion *aux = getCab();
+
+	if (!vacia()){
+		do{
+			if (strstr(aux->getCancion()->getNombre(), _nombre) != NULL)
+				lc->agregar(aux->getCancion());
+			else {
+				aux = aux->getSgte();
+			}
+		} while (aux != getCab());
+	}
+	return lc;
+}

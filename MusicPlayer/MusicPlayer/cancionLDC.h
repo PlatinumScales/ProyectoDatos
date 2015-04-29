@@ -48,5 +48,7 @@ public:
 
 	cancionLDC* contains(char* _nombre);// regresa una lista de canciones cuyo nombre contiene _nombre
 
+	bool buscarGenero(char * _genero);
+	bool buscarCancion(char * _cancion);
 };
 
