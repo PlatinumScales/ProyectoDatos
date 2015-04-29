@@ -32,17 +32,23 @@ void printTag(){
 }
 
 void reproducirLista(cancionLDC *aux){
-	nodoCancion *cab = aux->getCab();
-	do{
-		char temp[80] = "vlc ";
-		strcat_s(temp, cab->getCancion()->getPath());
 
-		system(temp);
+	if (aux->getCab() != NULL){
+		nodoCancion *cab = aux->getCab();
+		do{
+			char temp[80] = "vlc ";
+			strcat_s(temp, cab->getCancion()->getPath());
 
-	} while (cab != NULL);
+			system(temp);
+			cab = cab->getSgte();
+			//cout << "shit " << endl;
+		} while (cab != aux->getCab());
 
 
+	}
+	else
 
+		cout << " No hay canciones" << endl;
 
 }
 
@@ -230,18 +236,18 @@ void reproducir(){
 			break;
 		}
 		case 5:{
-			all->mostrarLista();
-
+			all->mostrarLista();	
 			cout << "ingrese el nombre de la cancion a escuchar" << endl;
 			cin >> nombre;
+			if (all->dirNodo(nombre) != NULL){
 			all->dirNodo(nombre)->getCancion()->getPath();
 			char test[50];
-			char vlc[80] = "vlc";
+			char vlc[80] = "vlc ";
 			strcpy_s(test, all->dirNodo(nombre)->getCancion()->getPath());
 			strcat_s(vlc, test);
 			system(vlc);
 
-
+}
 
 
 
@@ -433,7 +439,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	cout << kek << endl;
 
 	lPlayList->insertar(all);
-	system("pause");
+	//system("pause");
 
 
 

@@ -20,7 +20,7 @@ cancionLDC *listaDeListas::getCab(){
 	return cab;
 }
 cancionLDC *listaDeListas::contiene(char* _nombre){
-	cout << "to Do";
+//	cout << "to Do";
 
 	cancionLDC *cab = getCab();
 
@@ -31,6 +31,7 @@ cancionLDC *listaDeListas::contiene(char* _nombre){
 			return cab;
 		}
 
+		cab = cab->getSgt();
 	} while (cab != NULL);
 
 
@@ -70,10 +71,7 @@ int listaDeListas::largo(){
 	return size;
 }
 
-cancionLDC *listaDeListas::contiene(char* _nombre){
-	cout << "to Do";
-	return new cancionLDC();
-}
+
 
 cancionLDC *listaDeListas::get(int nlista){
 	if (nlista > size|| nlista < 0){
